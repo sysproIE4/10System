@@ -3,8 +3,9 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h>            // 本物のsystem関数のため
-#include <sys/wait.h>          // waitのため
+#include <stdlib.h>    // exit, system のため
+#include <unistd.h>    // fork, execXX のため
+#include <sys/wait.h>  // wait のため
 
 // system関数のクローン
 int mysystem(char *command) {
@@ -13,7 +14,7 @@ int mysystem(char *command) {
   // ここにプログラムを書く
 
   // status変数にwait()が格納した値から終了ステータスを取り出して返す
-  return WEXITSTATUS(status);
+  return status;
 }
 
 // テストドライバ（mysystem()関数動作テスト用の仮のmain）
