@@ -13,7 +13,6 @@ int mysystem(char *command) {
 
   // ここにプログラムを書く
 
-  // status変数にwait()が格納した値から終了ステータスを取り出して返す
   return status;
 }
 
