@@ -3,6 +3,14 @@
 ```system```関数のクローン```mysystem```関数を作りなさい．<br>
 また，与えられたテストドライバを用いて動作確認をしなさい．
 
+## レポジトリの内容
+
+```
+Makefile      makeコマンドが使用するファイル
+mysysmain.c   テストドライバ（テスト用のmain関数）
+mysystem.c    このファイルにmysystem関数を作成する．
+```
+
 ## 作成
 
 1. system関数の仕様<br>
@@ -16,16 +24,16 @@
   できたと思ったら十分な動作テストを行う．
 
 1. 動作テスト<br>
-  ```mysystem.c```内に準備してあるmain関数を使用してテストを行う．
+  ```mysysmain.c```内に準備してあるmain関数を使用してテストを行う．
 
 ## 実行例
 
 ````bash
-$ ls -l                                     <--- コマンドラインで実行した結果
+% ls -l                                     <--- コマンドラインで実行した結果
 total 40
 -rwxr-xr-x  1 sigemura  staff  12864  7 28 21:58 mysystem
 -rw-r--r--  1 sigemura  staff   2288  7 28 21:58 mysystem.c
-$ ./mysystem "ls -l"
+% ./mysystem "ls -l"
 mysystem:                                   <--- ここからmysystemの結果
 total 40
 -rwxr-xr-x 1 sigemura staff 12864 7 28 21:58 mysystem
@@ -37,7 +45,7 @@ total 40
 -rw-r--r-- 1 sigemura staff 2288 7 28 21:58 mysystem.c
 retval = 00000000
 
-$ ./mysystem                                <--- mysystemには引数が一つ必要
+% ./mysystem                                <--- mysystemには引数が一つ必要
 使い方 : ./mysystem コマンド文字列             <--- Usage メッセージを表示
 ````
 
@@ -45,7 +53,7 @@ $ ./mysystem                                <--- mysystemには引数が一つ�
 
 ```Makefile```を準備してあるので```make```コマンドでコンパイルできる．
 
-```bash
-$ make
-cc -Wall -std=c99 -o mysystem mysystem.c
+```zsh
+% make
+cc -Wall -std=c99 -o mysysmain mysysmain.c  mysystem.c
 ```
